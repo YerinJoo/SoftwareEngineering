@@ -85,7 +85,11 @@ class MemoMenu{
 			System.out.print("1.메모추가\n2.메모삭제\n3.메모수정\n4.메모보기\n5.메인 메뉴로 돌아가기\n");
 			sel = sc.nextInt();
 			
+<<<<<<< HEAD
 			//메모 목록추가 필요!
+=======
+			//메모 목록추가 필요
+>>>>>>> justtest1
 
 			switch(sel){
 			case 1:
