@@ -84,12 +84,8 @@ class MemoMenu{
 			System.out.println("\n한 줄의 메모를 저장할 수 있는 메모장입니다. 메모 파일은 txt 파일로 저장됩니다. ");
 			System.out.print("1.메모추가\n2.메모삭제\n3.메모수정\n4.메모보기\n5.메인 메뉴로 돌아가기\n");
 			sel = sc.nextInt();
-			
-<<<<<<< HEAD
-			//메모 목록추가 필요!
-=======
-			//메모 목록추가 필요
->>>>>>> justtest1
+	
+			//메모목록추가ㅏㅏㅏㅏㅏ
 
 			switch(sel){
 			case 1:
