@@ -4,7 +4,6 @@ import java.util.*;
 
 public class SimpleProgram {
 	
-	
 	class Memo {
 		// //////////////완 성 아 님 ///////////////////////////////
 		void createMemo(String title) throws IOException{
@@ -123,8 +122,7 @@ public class SimpleProgram {
 			}while(sel != 5);
 			
 		}
-
-	
+		
 	static class Calculator {
 		StringTokenizer tokenizer;
 		String token;
@@ -204,7 +202,6 @@ public class SimpleProgram {
 	    }
 	}//class UnitConverter end
 	
-	
 	public static void main(String args[]) throws IOException{
 		Scanner scanner = new Scanner(System.in);
 
@@ -212,10 +209,12 @@ public class SimpleProgram {
 		
 		System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
 		System.out.print("원하시는 작업을 선택해주세요 >> ");
+
 		while(true){
-			int ans = scanner.nextInt();
+			int ans = scanner.nextInt();			
 			if(ans==4) {
 				System.out.println("프로그램을 종료합니다.");
+
 				break;
 			}
 			
