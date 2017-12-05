@@ -210,7 +210,6 @@ public class SimpleProgram {
 
 		SimpleProgram SP = new SimpleProgram();
 		
-		
 		System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
 		System.out.print("원하시는 작업을 선택해주세요 >> ");
 		while(true){
