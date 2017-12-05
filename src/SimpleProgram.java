@@ -1,6 +1,130 @@
+import java.io.*;
 import java.util.*;
 
+
 public class SimpleProgram {
+	
+	
+	class Memo {
+		// //////////////¿Ï ¼º ¾Æ ´Ô ///////////////////////////////
+		void createMemo(String title) throws IOException{
+			Scanner sc = new Scanner(System.in);
+			String source = "";
+			String realtitle=title+".txt";
+			
+			System.out.print("¸Ş¸ğ ³»¿ëÀ» ÀÔ·Â¤¡ : ");
+			
+			source=sc.nextLine();
+			
+			char input[] = new char[source.length()];
+			source.getChars(0, source.length(), input, 0);
+			FileWriter fw = new FileWriter(realtitle);
+			fw.write(input);
+			fw.close();
+			System.out.print(title + " ÆÄÀÏÀÌ »ı¼ºµÇ¾ú½À´Ï´Ù\n\n");
+			
+		}
+		
+		void deleteMemo(String title){
+		    Scanner scan = new Scanner(System.in);
+		    String realtitle=title+".txt";
+	
+		    File f = new File(realtitle);
+	
+		    if (f.delete()) {
+		      System.out.println("ÆÄÀÏ ¶Ç´Â µğ·ºÅä¸®¸¦ ¼º°øÀûÀ¸·Î Áö¿ü½À´Ï´Ù: " + title + "\n\n");
+		    } else {
+		      System.err.println("ÆÄÀÏ ¶Ç´Â µğ·ºÅä¸® Áö¿ì±â ½ÇÆĞ: " + title);
+		    }
+		}
+		
+		void updateMemo(String title) throws IOException{
+			Scanner sc = new Scanner(System.in);
+			String realtitle=title+".txt";
+			String source = "";
+			
+			System.out.print("¼öÁ¤ÇÒ ¸Ş¸ğ ³»¿ëÀ» ÀÔ·Â¤¡ : ");
+			
+			source=sc.nextLine();
+			//ÆÄÀÏ¸í ÀÏÄ¡¿©ºÎ Ãß°¡ÇÊ¿ä
+			char input[] = new char[source.length()];
+			source.getChars(0, source.length(), input, 0);
+			FileWriter fw = new FileWriter(realtitle);
+			fw.write(input);
+			fw.close();
+			System.out.print(title + "ÆÄÀÏÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù\n\n");
+			
+		}
+		
+		void openMemo(String title) throws IOException{
+			Scanner sc = new Scanner(System.in);
+			String realtitle=title+".txt";
+			String source = "";
+			//¿Ï¼º¾Æ´Ô¿Ï¼º¾Æ´Ô¿Ï¼º¾Æ´Ô
+			FileReader fr = new FileReader(realtitle);
+			int i;
+			
+			System.out.print("\nÆÄÀÏ¸í : " + realtitle + "\n¸Ş¸ğ ³»¿ë : ");
+			
+			while((i=fr.read()) != -1)
+				System.out.print((char)i);
+			
+			System.out.println("\n");
+			
+			fr.close();
+			
+		}
+	}
+	
+		void memomenu() throws IOException{
+			Scanner sc = new Scanner(System.in);
+		
+			int sel=0;
+			String title="";
+			Memo ddd = new Memo();
+			
+			do{
+				System.out.println("\nÇÑ ÁÙÀÇ ¸Ş¸ğ¸¦ ÀúÀåÇÒ ¼ö ÀÖ´Â ¸Ş¸ğÀåÀÔ´Ï´Ù. ¸Ş¸ğ ÆÄÀÏÀº txt ÆÄÀÏ·Î ÀúÀåµË´Ï´Ù. ");
+				System.out.print("1.¸Ş¸ğÃß°¡\n2.¸Ş¸ğ»èÁ¦\n3.¸Ş¸ğ¼öÁ¤\n4.¸Ş¸ğº¸±â\n5.¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°¡±â\n");
+				sel = sc.nextInt();
+				
+				//¸Ş¸ğ ¸ñ·ÏÃß°¡ ÇÊ¿ä!
+	
+				switch(sel){
+				case 1:
+					System.out.print("Ãß°¡ÇÒ ÆÄÀÏ¸í: ");
+					title = sc.next();
+					ddd.createMemo(title);
+					break;
+					
+				case 2:
+					System.out.print("Áö¿ï ÆÄÀÏ¸í: ");
+				    title = sc.next();
+					ddd.deleteMemo(title);
+					break;
+					
+				case 3:
+					System.out.print("¼öÁ¤ÇÒ ÆÄÀÏ¸í: ");
+				    title = sc.next();
+					ddd.updateMemo(title);
+					break;
+					
+				case 4:
+					System.out.print("¿­°í ½ÍÀº ¸Ş¸ğ ÆÄÀÏ¸í: ");
+				    title = sc.next();
+					ddd.openMemo(title);
+					break;
+					
+				case 5:
+					
+				//	System.exit(0);
+					break;
+				}
+			}while(sel != 5);
+			
+		}
+
+	
 	static class Calculator {
 		StringTokenizer tokenizer;
 		String token;
@@ -81,19 +205,23 @@ public class SimpleProgram {
 	}//class UnitConverter end
 	
 	
-	public static void main(String args[]){
+	public static void main(String args[]) throws IOException{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("ì‹¬í”Œ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤. 1.ë©”ëª¨ì¥ 2.ê³„ì‚°ê¸° 3.ê°€ê³„ë¶€ 4.ì¢…ë£Œ");
-		System.out.print("ì›í•˜ì‹œëŠ” ì‘ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš” >> ");
+
+		SimpleProgram SP = new SimpleProgram();
+		
+		System.out.println("½ÉÇÃ ÇÁ·Î±×·¥ÀÔ´Ï´Ù. 1.¸Ş¸ğÀå 2.°è»ê±â 3.°¡°èºÎ 4.Á¾·á");
+		System.out.print("¿øÇÏ½Ã´Â ÀÛ¾÷À» ¼±ÅÃÇØÁÖ¼¼¿ä >> ");
 		while(true){
 			int ans = scanner.nextInt();
 			if(ans==4) {
-				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
 				break;
 			}
 			
 			switch(ans){
 			case 1: //memo manager
+				SP.memomenu();
 				break;
 			case 2: //calculator
 				break;
