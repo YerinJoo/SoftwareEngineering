@@ -59,19 +59,7 @@ public class SimpleProgram {
 	        }  
 	        return result;  
 	     }
-	    
-	    public static void start(){
-			Scanner scanner = new Scanner(System.in);
-			String line;
-			System.out.print("원하시는 작업을 선택하세요: 1. 사칙연산 2. 단위변환\n>> ");
-			int ans = scanner.nextInt();
-			if(ans==1) {
-				System.out.print("식 입력: ");  
-	            line = scanner.nextLine();
-	            Calculator expn = new Calculator(line);  
-	            System.out.println("결과 값: " + expn.Evaluate());
-			}
-		}
+	   
 	}//class Calculator end
 	
 	class UnitConverter {
