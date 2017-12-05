@@ -20,6 +20,7 @@ public class accountbook_main {
 			break;
 		}
 		}
+		System.out.println();
 	}
 
 }
