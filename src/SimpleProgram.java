@@ -1,14 +1,106 @@
 import java.util.*;
 
 public class SimpleProgram {
+	static class Calculator {
+		StringTokenizer tokenizer;
+		String token;
+		
+		public Calculator(String line) {
+			tokenizer = new StringTokenizer(line);
+			token = tokenizer.nextToken();
+		}
+
+		public double Evaluate() {  
+	        return Expression();  
+	    }  
+	     
+	    private double Primary() {  
+	        double result;  
+	        if(token.equals("")) {  
+	            token = tokenizer.nextToken();  
+	            result = Expression();  
+	        }  
+	        else result = Double.valueOf(token).doubleValue();
+	        
+	        token = tokenizer.nextToken();  
+	        return result;  
+	    }  
+	     
+	    private double Term() {  
+	        double nextValue;  
+	        double result;
+	        result = Primary();  
+	        while(token.equals("*")) {  
+	            token = tokenizer.nextToken();  
+	            nextValue = Primary();  
+	            result *= nextValue;  
+	        }  
+	        while(token.equals("/")) {  
+	            token = tokenizer.nextToken();  
+	            nextValue = Primary();  
+	            result /= nextValue;  
+	        }    
+	        return result; 
+	    }  
+	     
+	    private double Expression() {  
+	        double nextValue;  
+	        double result;  
+	        result = Term();  
+	        while(token.equals("+")) {            
+	            token = tokenizer.nextToken();  
+	            nextValue = Term();  
+	            result += nextValue;  
+	        }  
+	        while(token.equals("-")) {  
+	            token = tokenizer.nextToken();  
+	            nextValue = Term();  
+	            result -= nextValue;  
+	        }  
+	        return result;  
+	     }
+	    
+	    public static void start(){
+			Scanner scanner = new Scanner(System.in);
+			String line;
+			System.out.print("ì›í•˜ì‹œëŠ” ì‘ì—…ì„ ì„ íƒí•˜ì„¸ìš”: 1. ì‚¬ì¹™ì—°ì‚° 2. ë‹¨ìœ„ë³€í™˜\n>> ");
+			int ans = scanner.nextInt();
+			if(ans==1) {
+				System.out.print("ì‹ ì…ë ¥: ");  
+	            line = scanner.nextLine();
+	            Calculator expn = new Calculator(line);  
+	            System.out.println("ê²°ê³¼ ê°’: " + expn.Evaluate());
+			}
+		}
+	}//class Calculator end
+	
+	class UnitConverter {
+	    private String[] unitList = { "inch", "cm", "lb", "kg", "F", "C" };
+	    private double[] rateList = { 1, 2.54, 0.39, 2.2, 0.45, 0, 0};//F-C
+	    private HashMap<String, Double> Convert = new HashMap<String, Double>();
+
+	    private String convert(String in1, String in2, String in3) {
+	        double input = Double.valueOf(in1);
+	        double unitValue, convertValue;
+	        if(Convert.containsKey(in2) && Convert.containsKey(in3)){
+	            unitValue = Convert.get(in2);
+	            convertValue = Convert.get(in3);
+	        }else{
+	            return "No such unit in the registered list.";
+	        }
+	        return (int)(input / unitValue * convertValue) + " " + in3;
+	    }
+	}//class UnitConverter end
+	
+	
 	public static void main(String args[]){
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("½ÉÇÃ ÇÁ·Î±×·¥ÀÔ´Ï´Ù. 1.¸Ş¸ğÀå 2.°è»ê±â 3.°¡°èºÎ 4.Á¾·á");
-		System.out.print("¿øÇÏ½Ã´Â ÀÛ¾÷À» ¼±ÅÃÇØÁÖ¼¼¿ä >> ");
+		System.out.println("ì‹¬í”Œ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤. 1.ë©”ëª¨ì¥ 2.ê³„ì‚°ê¸° 3.ê°€ê³„ë¶€ 4.ì¢…ë£Œ");
+		System.out.print("ì›í•˜ì‹œëŠ” ì‘ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš” >> ");
 		while(true){
 			int ans = scanner.nextInt();
 			if(ans==4) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			}
 			
