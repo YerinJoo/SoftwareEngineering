@@ -285,7 +285,7 @@ public class SimpleProgram {
 	
 	public static void main(String args[]) throws IOException{
 		Scanner scanner = new Scanner(System.in);
-
+		AccountBook2 account = new AccountBook2();
 		SimpleProgram SP = new SimpleProgram();
 		
 		System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
@@ -304,6 +304,7 @@ public class SimpleProgram {
 			case 2: //calculator
 				break;
 			case 3: //account book 
+				account.AccountMenu();
 				break;
 			}
 		}
