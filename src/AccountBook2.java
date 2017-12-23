@@ -15,11 +15,11 @@ public class AccountBook2 {
 	String title2 = "re_accountbook.txt";
 
 	void AccountMenu() {
-		System.out.println("..ÄÚµùÁß..");
+		System.out.println("..ì½”ë”©ì¤‘..");
 		Scanner scan = new Scanner(System.in);
 		int num = 0;
 		while(num!=5 || num!=6) {
-			System.out.print("[°¡°èºÎ]\n1.°¡°èºÎ Ãß°¡\n2.¾÷µ¥ÀÌÆ®\n3.»èÁ¦\n4.ºÒ·¯¿À±â\n5.µ¹¾Æ°¡±â\n5.¸Ş´º·Îµ¹¾Æ°¡±â\n6.Á¾·á\n->");
+			System.out.print("[ê°€ê³„ë¶€]\n1.ê°€ê³„ë¶€ ì¶”ê°€\n2.ì—…ë°ì´íŠ¸\n3.ì‚­ì œ\n4.ë¶ˆëŸ¬ì˜¤ê¸°\n5.ëŒì•„ê°€ê¸°\n5.ë©”ë‰´ë¡œëŒì•„ê°€ê¸°\n6.ì¢…ë£Œ\n->");
 			num = scan.nextInt();
 			switch(num) {
 			case 1 :
@@ -35,10 +35,10 @@ public class AccountBook2 {
 				ShowAccountBook();
 				break;
 			case 5 :
-				System.out.print("¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.\n");
+				System.out.print("ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.\n");
 				break;
 			case 6 :
-				System.out.print("½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.print("ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				System.exit(0);
 				break;
 			}
@@ -58,7 +58,7 @@ public class AccountBook2 {
 		Scanner scan = new Scanner(System.in);
 		try {
 			FileWriter output = new FileWriter("accountbook.txt", true);
-			System.out.print("Ãß°¡ÇÒ ³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä(ÀÌ¸§ ³¯Â¥ °¡°İ ¼øÀ¸·Î) : ");
+			System.out.print("ì¶”ê°€í•  ë‚´ìš©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”(ì´ë¦„ ë‚ ì§œ ê°€ê²© ìˆœìœ¼ë¡œ) : ");
 			String accountbook = scan.nextLine();
 			String data = accountbook + "\r\n";
 			output.write(data);
@@ -74,8 +74,16 @@ public class AccountBook2 {
 	
 	void UpdateAccountBook(){
 		
+<<<<<<< HEAD
 		String line;
 		String kword = null;
+=======
+		Scanner scan = new Scanner(System.in);
+		System.out.print("updateí•  ê²ƒì„ ì…ë ¥í•˜ì„¸ìš”: ");
+		String a = scan.nextLine();
+		System.out.print("updateí•  ë¬¼ê±´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
+		String b = scan.nextLine();
+>>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 		
 		try {
 			Scanner scan = new Scanner(System.in);
@@ -100,6 +108,7 @@ public class AccountBook2 {
 					kword = a;
 				bw.flush();
 			}
+<<<<<<< HEAD
 			if(kword == null)
 				System.out.println(a+" °ú(¿Í) ÀÏÄ¡ÇÏ´Â °ÍÀº ¾ø½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 			
@@ -121,6 +130,13 @@ public class AccountBook2 {
 			bw.close();
 			fw.close();
 			
+=======
+		
+		if(kword == null)
+			System.out.println(a+" ì™€ ì¼ì¹˜í•˜ëŠ” ê°€ê³„ë¶€ëŠ” ì—†ìŠµë‹ˆë‹¤.");
+		else
+			System.out.println(kword + " í•­ëª©ì„ ì°¾ì•˜ìŠµë‹ˆë‹¤.");
+>>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -133,7 +149,7 @@ public class AccountBook2 {
 		try {
 			
 			Scanner scan = new Scanner(System.in);
-			System.out.print("»èÁ¦ÇÒ ¹°°ÇÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì‚­ì œí•  ë¬¼ê±´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 			String del = scan.nextLine();
 			
 			BufferedReader br = new BufferedReader(new FileReader("accountbook.txt"));
@@ -153,7 +169,7 @@ public class AccountBook2 {
 				bw.flush();
 			}
 			if(kword == null)
-				System.out.println(del+" °ú(¿Í) ÀÏÄ¡ÇÏ´Â °ÍÀº ¾ø½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println(del+" ê³¼(ì™€) ì¼ì¹˜í•˜ëŠ” ê²ƒì€ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			
 			FileInputStream fis = new FileInputStream("re_accountbook.txt");
 			FileOutputStream fos = new FileOutputStream("accountbook.txt");

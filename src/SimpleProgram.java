@@ -269,10 +269,15 @@ public class SimpleProgram {
 					}
 				}
 			}
+<<<<<<< HEAD
 			
 			
 		}
 public static void main(String args[]) throws IOException{
+=======
+		}
+	public static void main(String args[]) throws IOException{
+>>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 				Scanner scanner = new Scanner(System.in);
 
 				SimpleProgram SP = new SimpleProgram();
@@ -300,4 +305,8 @@ public static void main(String args[]) throws IOException{
 				}
 				scanner.close();
 			}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
