@@ -10,7 +10,7 @@ public class SimpleProgram {
 			String source = "";
 			String realtitle=title+".txt";
 			
-			System.out.print("¸Ş¸ğ ³»¿ëÀ» ÀÔ·Â¤¡ : ");
+			System.out.print("ë©”ëª¨ ë‚´ìš©ì„ ì…ë ¥ã„± : ");
 			source=sc.nextLine();
 			
 			char input[] = new char[source.length()];
@@ -18,7 +18,7 @@ public class SimpleProgram {
 			FileWriter fw = new FileWriter(realtitle);
 			fw.write(input);
 			fw.close();
-			System.out.print(title + " ÆÄÀÏÀÌ »ı¼ºµÇ¾ú½À´Ï´Ù\n\n");
+			System.out.print(title + " íŒŒì¼ì´ ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤\n\n");
 
 		}
 		
@@ -48,11 +48,11 @@ public class SimpleProgram {
 		    File f = new File(realtitle);
 	
 		    if (f.delete()) {
-		      System.out.println("ÆÄÀÏ ¶Ç´Â µğ·ºÅä¸®¸¦ ¼º°øÀûÀ¸·Î Áö¿ü½À´Ï´Ù: " + title + "\n\n");
+		      System.out.println("íŒŒì¼ ë˜ëŠ” ë””ë ‰í† ë¦¬ë¥¼ ì„±ê³µì ìœ¼ë¡œ ì§€ì› ìŠµë‹ˆë‹¤: " + title + "\n\n");
 			
 
 		    } else {
-		      System.err.println("ÆÄÀÏ ¶Ç´Â µğ·ºÅä¸® Áö¿ì±â ½ÇÆĞ: " + title);
+		      System.err.println("íŒŒì¼ ë˜ëŠ” ë””ë ‰í† ë¦¬ ì§€ìš°ê¸° ì‹¤íŒ¨: " + title);
 		    }
 		}
 		
@@ -75,18 +75,18 @@ public class SimpleProgram {
 			if(fileList.length > 0){				
 				for(int j=0; j < fileList.length; j++){
 					if(realtitle.equals(fileList[j])){
-						System.out.print("¼öÁ¤ÇÒ ¸Ş¸ğ ³»¿ëÀ» ÀÔ·Â¤¡ : ");
+						System.out.print("ìˆ˜ì •í•  ë©”ëª¨ ë‚´ìš©ì„ ì…ë ¥ã„± : ");
 						source=sc.nextLine();
 						char input[] = new char[source.length()];
 						source.getChars(0, source.length(), input, 0);
 						FileWriter fw = new FileWriter(realtitle);
 						fw.write(input);
 						fw.close();
-						System.out.print(title + "ÆÄÀÏÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù\n\n");
+						System.out.print(title + "íŒŒì¼ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n\n");
 						break;
 					}
 					else{
-						System.out.println("ÀÏÄ¡ÇÏ´Â ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+						System.out.println("ì¼ì¹˜í•˜ëŠ” íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");
 						break;
 					}
 						
@@ -110,7 +110,7 @@ public class SimpleProgram {
 				}
 			});
 			
-			System.out.println("< ÇöÀç ÆÄÀÏ ¸ñ·Ï >");
+			System.out.println("< í˜„ì¬ íŒŒì¼ ëª©ë¡ >");
 			if(fileList.length > 0){				
 				for(int j=0; j < fileList.length; j++){
 					System.out.println(fileList[j]);
@@ -118,14 +118,14 @@ public class SimpleProgram {
 			}
 			
 
-			System.out.print("¿­°í ½ÍÀº ¸Ş¸ğ ÆÄÀÏ¸í: ");
+			System.out.print("ì—´ê³  ì‹¶ì€ ë©”ëª¨ íŒŒì¼ëª…: ");
 		    title = sc.next();
 		    
 		    String realtitle=title+".txt";
 			String source = "";
 			FileReader fr = new FileReader(realtitle);
 			
-			System.out.print("\nÆÄÀÏ¸í : " + realtitle + "\n¸Ş¸ğ ³»¿ë : ");
+			System.out.print("\níŒŒì¼ëª… : " + realtitle + "\në©”ëª¨ ë‚´ìš© : ");
 			
 			while((i=fr.read()) != -1)
 				System.out.print((char)i);
@@ -144,25 +144,25 @@ public class SimpleProgram {
 			Memo ddd = new Memo();
 			
 			do{
-				System.out.println("\nÇÑ ÁÙÀÇ ¸Ş¸ğ¸¦ ÀúÀåÇÒ ¼ö ÀÖ´Â ¸Ş¸ğÀåÀÔ´Ï´Ù. ¸Ş¸ğ ÆÄÀÏÀº txt ÆÄÀÏ·Î ÀúÀåµË´Ï´Ù. ");
-				System.out.print("1.¸Ş¸ğÃß°¡\n2.¸Ş¸ğ»èÁ¦\n3.¸Ş¸ğ¼öÁ¤\n4.¸Ş¸ğº¸±â\n5.¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°¡±â\n");
+				System.out.println("\ní•œ ì¤„ì˜ ë©”ëª¨ë¥¼ ì €ì¥í•  ìˆ˜ ìˆëŠ” ë©”ëª¨ì¥ì…ë‹ˆë‹¤. ë©”ëª¨ íŒŒì¼ì€ txt íŒŒì¼ë¡œ ì €ì¥ë©ë‹ˆë‹¤. ");
+				System.out.print("1.ë©”ëª¨ì¶”ê°€\n2.ë©”ëª¨ì‚­ì œ\n3.ë©”ëª¨ìˆ˜ì •\n4.ë©”ëª¨ë³´ê¸°\n5.ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°\n");
 				sel = sc.nextInt();
 	
 				switch(sel){
 				case 1:
-					System.out.print("Ãß°¡ÇÒ ÆÄÀÏ¸í: ");
+					System.out.print("ì¶”ê°€í•  íŒŒì¼ëª…: ");
 					title = sc.next();
 					ddd.createMemo(title);
 					break;
 					
 				case 2:
-					System.out.print("Áö¿ï ÆÄÀÏ¸í: ");
+					System.out.print("ì§€ìš¸ íŒŒì¼ëª…: ");
 				    title = sc.next();
 					ddd.deleteMemo(title);
 					break;
 					
 				case 3:
-					System.out.print("¼öÁ¤ÇÒ ÆÄÀÏ¸í: ");
+					System.out.print("ìˆ˜ì •í•  íŒŒì¼ëª…: ");
 				    title = sc.next();
 					ddd.updateMemo(title);
 					break;
@@ -186,20 +186,20 @@ public class SimpleProgram {
 			Scanner scan = new Scanner(System.in);
 			void menu() {
 				
-				System.out.print("[°è»ê±â ¸Ş´º]\n1. »çÄ¢¿¬»ê 2. ´ÜÀ§º¯È¯\n¿øÇÏ½Ã´Â ±â´ÉÀ» ¼±ÅÃÇÏ¼¼¿ä>> ");
+				System.out.print("[ê³„ì‚°ê¸° ë©”ë‰´]\n1. ì‚¬ì¹™ì—°ì‚° 2. ë‹¨ìœ„ë³€í™˜\nì›í•˜ì‹œëŠ” ê¸°ëŠ¥ì„ ì„ íƒí•˜ì„¸ìš”>> ");
 				int ch = scan.nextInt();
 				if(ch==1) {
 					double op1, op2;
 					String opt;
 					while(true){
-					System.out.println("[»çÄ¢¿¬»ê ¸Ş´º]");
-					System.out.print("¼ıÀÚ1>> ");
+					System.out.println("[ì‚¬ì¹™ì—°ì‚° ë©”ë‰´]");
+					System.out.print("ìˆ«ì1>> ");
 					op1 = scan.nextDouble();
 					System.out.print("*, /, -, + >> ");
 					opt = scan.next();
-					System.out.print("¼ıÀÚ2>> ");
+					System.out.print("ìˆ«ì2>> ");
 					op2 = scan.nextDouble();
-					System.out.println("°á°ú°ª: " + calc(op1, op2, opt));
+					System.out.println("ê²°ê³¼ê°’: " + calc(op1, op2, opt));
 					}
 				}
 				if(ch==2) {unit();}
@@ -224,71 +224,65 @@ public class SimpleProgram {
 				double inch, cm, lb, kg, F, C;
 				int conv;
 				while(true) {
-					System.out.println("[´ÜÀ§º¯È¯ ¸Ş´º]");
+					System.out.println("[ë‹¨ìœ„ë³€í™˜ ë©”ë‰´]");
 					System.out.println("1. inch->cm 2. cm->inch 3. lb->kg 4. kg->lb");
-					System.out.println("5. F->C 6. C->F 7. ÀÌÀü ¸Ş´º·Î µ¹¾Æ°¡±â 8. Á¾·áÇÏ±â");
-					System.out.print("¿øÇÏ½Ã´Â ±â´ÉÀ» ¼±ÅÃÇÏ¼¼¿ä>> ");
+					System.out.println("5. F->C 6. C->F 7. ì´ì „ ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸° 8. ì¢…ë£Œí•˜ê¸°");
+					System.out.print("ì›í•˜ì‹œëŠ” ê¸°ëŠ¥ì„ ì„ íƒí•˜ì„¸ìš”>> ");
 					conv = scan.nextInt();
 					switch(conv){
 					case 1:
 						System.out.print("inch>> ");
 						inch = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + 2.54*inch + "cm");
+						System.out.println("ê²°ê³¼ê°’: " + 2.54*inch + "cm");
 						break;
 					case 2:
 						System.out.print("cm>> ");
 						cm = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + 0.39*cm + "inch");
+						System.out.println("ê²°ê³¼ê°’: " + 0.39*cm + "inch");
 						break;
 					case 3:
 						System.out.print("lb>> ");
 						lb = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + 0.45*lb + "kg");
+						System.out.println("ê²°ê³¼ê°’: " + 0.45*lb + "kg");
 						break;
 					case 4:
 						System.out.print("kg>> ");
 						kg = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + 2.2*kg + "lb");
+						System.out.println("ê²°ê³¼ê°’: " + 2.2*kg + "lb");
 						break;
 					case 5:
 						System.out.print("F>> ");
 						F = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + (F-32)*5/9 + "C");
+						System.out.println("ê²°ê³¼ê°’: " + (F-32)*5/9 + "C");
 						break;
 					case 6:
 						System.out.print("C>> ");
 						C = scan.nextDouble();
-						System.out.println("°á°ú°ª: " + (9*C/5)+32 + "F");
+						System.out.println("ê²°ê³¼ê°’: " + (9*C/5)+32 + "F");
 						break;
 					case 7:
 						menu();
 						break;
 					case 8:
-						System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+						System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 						System.exit(0);
 					}
 				}
-			}
-<<<<<<< HEAD
-			
-			
+			}	
 		}
 public static void main(String args[]) throws IOException{
-=======
-		}
 	public static void main(String args[]) throws IOException{
->>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 				Scanner scanner = new Scanner(System.in);
 
 				SimpleProgram SP = new SimpleProgram();
 				SimpleProgram.Calculator ca = new SimpleProgram.Calculator();
 				
 				while(true){
-					System.out.println("½ÉÇÃ ÇÁ·Î±×·¥ÀÔ´Ï´Ù. 1.¸Ş¸ğÀå 2.°è»ê±â 3.°¡°èºÎ 4.Á¾·á");
-					System.out.print("¿øÇÏ½Ã´Â ÀÛ¾÷À» ¼±ÅÃÇØÁÖ¼¼¿ä >> ");
+					System.out.println("ì‹¬í”Œ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤. 1.ë©”ëª¨ì¥ 2.ê³„ì‚°ê¸° 3.ê°€ê³„ë¶€ 4.ì¢…ë£Œ");
+					System.out.print("ì›í•˜ì‹œëŠ” ì‘ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš” >> ");
 					int ans = scanner.nextInt();
 					if(ans==4) {
-						System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+						System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 						break;
 					}
 					
@@ -305,8 +299,4 @@ public static void main(String args[]) throws IOException{
 				}
 				scanner.close();
 			}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
