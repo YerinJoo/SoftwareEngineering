@@ -180,7 +180,6 @@ public class SimpleProgram {
 			
 		} // class Memo end
 		
-<<<<<<< HEAD
 		Scanner scan = new Scanner(System.in);
 		class Calculator {
 			void menu() {
@@ -266,143 +265,34 @@ public class SimpleProgram {
 						System.exit(0);
 					}
 				}
-=======
-		
-
-	
-	static class Calculator {
-		StringTokenizer tokenizer;
-		String token;
-		
-		public Calculator(String line) {
-			tokenizer = new StringTokenizer(line);
-			token = tokenizer.nextToken();
-		}
-
-		public double Evaluate() {  
-	        return Expression();  
-	    }  
-	     
-	    private double Primary() {  
-	        double result;  
-	        if(token.equals("")) {  
-	            token = tokenizer.nextToken();  
-	            result = Expression();  
-	        }  
-	        else result = Double.valueOf(token).doubleValue();
-	        
-	        token = tokenizer.nextToken();  
-	        return result;  
-	    }  
-	     
-	    private double Term() {  
-	        double nextValue;  
-	        double result;
-	        result = Primary();  
-	        while(token.equals("*")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Primary();  
-	            result *= nextValue;  
-	        }  
-	        while(token.equals("/")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Primary();  
-	            result /= nextValue;  
-	        }    
-	        return result; 
-	    }  
-	     
-	    private double Expression() {  
-	        double nextValue;  
-	        double result;  
-	        result = Term();  
-	        while(token.equals("+")) {            
-	            token = tokenizer.nextToken();  
-	            nextValue = Term();  
-	            result += nextValue;  
-	        }  
-	        while(token.equals("-")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Term();  
-	            result -= nextValue;  
-	        }  
-	        return result;  
-	     }
-	   
-	}//class Calculator end
-	
-	class UnitConverter {
-	    private String[] unitList = { "inch", "cm", "lb", "kg", "F", "C" };
-	    private double[] rateList = { 1, 2.54, 0.39, 2.2, 0.45, 0, 0};//F-C
-	    private HashMap<String, Double> Convert = new HashMap<String, Double>();
-
-	    private String convert(String in1, String in2, String in3) {
-	        double input = Double.valueOf(in1);
-	        double unitValue, convertValue;
-	        if(Convert.containsKey(in2) && Convert.containsKey(in3)){
-	            unitValue = Convert.get(in2);
-	            convertValue = Convert.get(in3);
-	        }else{
-	            return "No such unit in the registered list.";
-	        }
-	        return (int)(input / unitValue * convertValue) + " " + in3;
-	    }
-	}//class UnitConverter end
-	
-	
-	public static void main(String args[]) throws IOException{
-		Scanner scanner = new Scanner(System.in);
-		AccountBook2 account = new AccountBook2();
-		SimpleProgram SP = new SimpleProgram();
-		
-		System.out.println("½ÉÇÃ ÇÁ·Î±×·¥ÀÔ´Ï´Ù. 1.¸Þ¸ðÀå 2.°è»ê±â 3.°¡°èºÎ 4.Á¾·á");
-		System.out.print("¿øÇÏ½Ã´Â ÀÛ¾÷À» ¼±ÅÃÇØÁÖ¼¼¿ä >> ");
-		while(true){
-			int ans = scanner.nextInt();
-			if(ans==4) {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
-				break;
->>>>>>> e3ecf4350b99d0587d1ac7446bdf1d8df77a22ee
 			}
-		}//class Caculator closed
-		
-		public static void main(String args[]) throws IOException{
-			Scanner scanner = new Scanner(System.in);
-			AccountBook2 account = new AccountBook2();
-			SimpleProgram SP = new SimpleProgram();
-			
-<<<<<<< HEAD
-			System.out.println("ì‹¬í”Œ í”„ë¡œê·¸ëž¨ìž…ë‹ˆë‹¤. 1.ë©”ëª¨ìž¥ 2.ê³„ì‚°ê¸° 3.ê°€ê³„ë¶€ 4.ì¢…ë£Œ");
-			System.out.print("ì›í•˜ì‹œëŠ” ìž‘ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš” >> ");
-			while(true){
-				int ans = scanner.nextInt();
-				if(ans==4) {
-					System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
-					break;
-				}
+			public void main(String args[]) throws IOException{
+				Scanner scanner = new Scanner(System.in);
+
+				SimpleProgram SP = new SimpleProgram();
+				SimpleProgram.Calculator ca = SP.new Calculator();
 				
-				switch(ans){
-				case 1: //memo manager
-					SP.memomenu();
-					break;
-				case 2: //calculator
-					break;
-				case 3: //account book 
-					account.AccountMenu();
-					break;
+				System.out.println("ì‹¬í”Œ í”„ë¡œê·¸ëž¨ìž…ë‹ˆë‹¤. 1.ë©”ëª¨ìž¥ 2.ê³„ì‚°ê¸° 3.ê°€ê³„ë¶€ 4.ì¢…ë£Œ");
+				System.out.print("ì›í•˜ì‹œëŠ” ìž‘ì—…ì„ ì„ íƒí•´ì£¼ì„¸ìš” >> ");
+				while(true){
+					int ans = scanner.nextInt();
+					if(ans==4) {
+						System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+						break;
+					}
+					
+					switch(ans){
+					case 1: //memo manager
+						SP.memomenu();
+						break;
+					case 2: //calculator
+						ca.menu();
+						break;
+					case 3: //account book 
+						break;
+					}
 				}
-=======
-			switch(ans){
-			case 1: //memo manager
-				SP.memomenu();
-				break;
-			case 2: //calculator
-				break;
-			case 3: //account book 
-				account.AccountMenu();
-				break;
->>>>>>> e3ecf4350b99d0587d1ac7446bdf1d8df77a22ee
+				scanner.close();
 			}
-			scanner.close();
 		}
 }
