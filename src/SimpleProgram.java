@@ -266,7 +266,8 @@ public class SimpleProgram {
 					}
 				}
 			}
-			public static void main(String args[]) throws IOException{
+		}
+	public static void main(String args[]) throws IOException{
 				Scanner scanner = new Scanner(System.in);
 
 				SimpleProgram SP = new SimpleProgram();
@@ -294,5 +295,4 @@ public class SimpleProgram {
 				}
 				scanner.close();
 			}
-		}
 }
