@@ -10,8 +10,8 @@ public class Filetest {
 SimpleProgram sp = new SimpleProgram();
 	
 	AccountBook2 account = new AccountBook2();
-	String title = "test.txt";
-	String title2 = "test2.txt";
+	String title = "test";
+	String title2 = "test2";
 	
 	@Test
 	public void testCreate() throws IOException{
