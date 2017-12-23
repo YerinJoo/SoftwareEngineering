@@ -122,85 +122,6 @@ public class SimpleProgram {
 			}while(sel != 5);
 			
 		}
-		
-	static class Calculator {
-		StringTokenizer tokenizer;
-		String token;
-		
-		public Calculator(String line) {
-			tokenizer = new StringTokenizer(line);
-			token = tokenizer.nextToken();
-		}
-
-		public double Evaluate() {  
-	        return Expression();  
-	    }  
-	     
-	    private double Primary() {  
-	        double result;  
-	        if(token.equals("")) {  
-	            token = tokenizer.nextToken();  
-	            result = Expression();  
-	        }  
-	        else result = Double.valueOf(token).doubleValue();
-	        
-	        token = tokenizer.nextToken();  
-	        return result;  
-	    }  
-	     
-	    private double Term() {  
-	        double nextValue;  
-	        double result;
-	        result = Primary();  
-	        while(token.equals("*")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Primary();  
-	            result *= nextValue;  
-	        }  
-	        while(token.equals("/")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Primary();  
-	            result /= nextValue;  
-	        }    
-	        return result; 
-	    }  
-	     
-	    private double Expression() {  
-	        double nextValue;  
-	        double result;  
-	        result = Term();  
-	        while(token.equals("+")) {            
-	            token = tokenizer.nextToken();  
-	            nextValue = Term();  
-	            result += nextValue;  
-	        }  
-	        while(token.equals("-")) {  
-	            token = tokenizer.nextToken();  
-	            nextValue = Term();  
-	            result -= nextValue;  
-	        }  
-	        return result;  
-	     }
-	   
-	}//class Calculator end
-	
-	class UnitConverter {
-	    private String[] unitList = { "inch", "cm", "lb", "kg", "F", "C" };
-	    private double[] rateList = { 1, 2.54, 0.39, 2.2, 0.45, 0, 0};//F-C
-	    private HashMap<String, Double> Convert = new HashMap<String, Double>();
-
-	    private String convert(String in1, String in2, String in3) {
-	        double input = Double.valueOf(in1);
-	        double unitValue, convertValue;
-	        if(Convert.containsKey(in2) && Convert.containsKey(in3)){
-	            unitValue = Convert.get(in2);
-	            convertValue = Convert.get(in3);
-	        }else{
-	            return "No such unit in the registered list.";
-	        }
-	        return (int)(input / unitValue * convertValue) + " " + in3;
-	    }
-	}//class UnitConverter end
 	
 	public static void main(String args[]) throws IOException{
 		Scanner scanner = new Scanner(System.in);
@@ -209,12 +130,11 @@ public class SimpleProgram {
 		
 		System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
 		System.out.print("원하시는 작업을 선택해주세요 >> ");
-
+		
 		while(true){
 			int ans = scanner.nextInt();			
 			if(ans==4) {
 				System.out.println("프로그램을 종료합니다.");
-
 				break;
 
 			}
