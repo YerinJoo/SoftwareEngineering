@@ -74,22 +74,14 @@ public class AccountBook2 {
 	
 	void UpdateAccountBook(){
 		
-<<<<<<< HEAD
 		String line;
 		String kword = null;
-=======
-		Scanner scan = new Scanner(System.in);
-		System.out.print("updateí•  ê²ƒì„ ì…ë ¥í•˜ì„¸ìš”: ");
-		String a = scan.nextLine();
-		System.out.print("updateí•  ë¬¼ê±´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
-		String b = scan.nextLine();
->>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 		
 		try {
 			Scanner scan = new Scanner(System.in);
-			System.out.print("updateÇÒ °ÍÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
+			System.out.print("updateí•  ê²ƒì„ ì…ë ¥í•˜ì„¸ìš”: ");
 			String a = scan.nextLine();
-			System.out.print("update ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä(¹°°Ç ³¯Â¥ °¡°İ ¼øÀ¸·Î ÀÔ·Â): ");
+			System.out.print("update ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”(ë¬¼ê±´ ë‚ ì§œ ê°€ê²© ìˆœìœ¼ë¡œ ì…ë ¥): ");
 			String b = scan.nextLine();
 			
 			BufferedReader br = new BufferedReader(new FileReader("accountbook.txt"));
@@ -108,9 +100,8 @@ public class AccountBook2 {
 					kword = a;
 				bw.flush();
 			}
-<<<<<<< HEAD
 			if(kword == null)
-				System.out.println(a+" °ú(¿Í) ÀÏÄ¡ÇÏ´Â °ÍÀº ¾ø½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println(a+" ê³¼(ì™€) ì¼ì¹˜í•˜ëŠ” ê²ƒì€ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			
 			FileInputStream fis = new FileInputStream("up_accountbook.txt");
 			FileOutputStream fos = new FileOutputStream("accountbook.txt");
@@ -130,13 +121,6 @@ public class AccountBook2 {
 			bw.close();
 			fw.close();
 			
-=======
-		
-		if(kword == null)
-			System.out.println(a+" ì™€ ì¼ì¹˜í•˜ëŠ” ê°€ê³„ë¶€ëŠ” ì—†ìŠµë‹ˆë‹¤.");
-		else
-			System.out.println(kword + " í•­ëª©ì„ ì°¾ì•˜ìŠµë‹ˆë‹¤.");
->>>>>>> 604ed0401bdd4c32c0f8089658115a9f80896ca2
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
