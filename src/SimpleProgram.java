@@ -89,25 +89,6 @@ public class SimpleProgram {
 		}
 	}//class Caculator closed
 	
-	class UnitConverter {
-	    private String[] unitList = { "inch", "cm", "lb", "kg", "F", "C" };
-	    private double[] rateList = { 1, 2.54, 0.39, 2.2, 0.45, 0, 0};//F-C
-	    private HashMap<String, Double> Convert = new HashMap<String, Double>();
-
-	    private String convert(String in1, String in2, String in3) {
-	        double input = Double.valueOf(in1);
-	        double unitValue, convertValue;
-	        if(Convert.containsKey(in2) && Convert.containsKey(in3)){
-	            unitValue = Convert.get(in2);
-	            convertValue = Convert.get(in3);
-	        }else{
-	            return "No such unit in the registered list.";
-	        }
-	        return (int)(input / unitValue * convertValue) + " " + in3;
-	    }
-	}//class UnitConverter end
-	
-	
 	public static void main(String args[]){
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
