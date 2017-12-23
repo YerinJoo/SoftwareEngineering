@@ -280,6 +280,7 @@ public static void main(String args[]) throws IOException{
 
 				SimpleProgram SP = new SimpleProgram();
 				SimpleProgram.Calculator ca = new SimpleProgram.Calculator();
+				AccountBook2 account = new AccountBook2();
 				
 				while(true){
 					System.out.println("심플 프로그램입니다. 1.메모장 2.계산기 3.가계부 4.종료");
@@ -298,6 +299,7 @@ public static void main(String args[]) throws IOException{
 						ca.menu();
 						break;
 					case 3: //account book 
+						account.AccountMenu();
 						break;
 					}
 				}
