@@ -5,17 +5,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-
-import sun.rmi.runtime.Log;
 
 public class AccountBook2 {
 	
 	String title = "accountbook.txt";
+	String title2 = "re_accountbook.txt";
 
 	void AccountMenu() {
 		System.out.println("..코딩중..");
@@ -32,7 +29,7 @@ public class AccountBook2 {
 				UpdateAccountBook();
 				break;
 			case 3 :
-				DeleteAccountBook();
+				DeleteAccountBook(title2);
 				break;
 			case 4 :
 				ShowAccountBook();
@@ -71,37 +68,64 @@ public class AccountBook2 {
 		}
 
 		System.out.println();
+		
 	}
+	
+	
 	void UpdateAccountBook(){
 		
-		Scanner scan = new Scanner(System.in);
-		System.out.print("update할 것을 입력하세요: ");
-		String a = scan.nextLine();
-		System.out.print("update할 물건을 입력하세요: ");
-		String b = scan.nextLine();
+		String line;
+		String kword = null;
 		
 		try {
-			BufferedReader in = new BufferedReader(new FileReader("accountbook.txt"));
-		
-			String kword = null;
-			String eword = null;
+			Scanner scan = new Scanner(System.in);
+			System.out.print("update할 것을 입력하세요: ");
+			String a = scan.nextLine();
+			System.out.print("update 내용을 입력하세요(물건 날짜 가격 순으로 입력): ");
+			String b = scan.nextLine();
 			
-			while((eword = in.readLine())!=null) {				
-				if(eword.contains(a)) {	
-					kword = eword;
+			BufferedReader br = new BufferedReader(new FileReader("accountbook.txt"));
+			File file = new File("up_accountbook.txt");
 			
+			file.createNewFile();
+			FileWriter fw = new FileWriter(file);
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			while((line=br.readLine())!=null) {
+				if(!line.contains(a)) {
+					bw.write(line);
+					bw.write("\n");
 				}
+				else
+					kword = a;
+				bw.flush();
 			}
-		
-		if(kword == null)
-			System.out.println(a+" 와 일치하는 가계부는 없습니다.");
-		else
-			System.out.println(kword + " 항목을 찾았습니다.");
+			if(kword == null)
+				System.out.println(a+" 과(와) 일치하는 것은 없습니다. 다시 입력해주세요.");
+			
+			FileInputStream fis = new FileInputStream("up_accountbook.txt");
+			FileOutputStream fos = new FileOutputStream("accountbook.txt");
+			   
+			   int data = 0;
+			   while((data=fis.read())!=-1) {
+			    fos.write(data);
+			   }
+			   fis.close();
+			   fos.close();
+
+			FileWriter output = new FileWriter("accountbook.txt", true);
+			String data2 = b+ "\r\n";
+			output.write(data2);
+			output.close();
+			   
+			bw.close();
+			fw.close();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	void DeleteAccountBook(){
+	void DeleteAccountBook(String title){
 		
 		String line;
 		String kword = null;
@@ -164,6 +188,25 @@ public class AccountBook2 {
 			e.printStackTrace();
 		}
 
+	}
+
+	public boolean isExistbook(String title) {
+		File path = new File(".");
+		final String ext = ".txt";
+		
+		String fileList[] = path.list(new FilenameFilter(){
+			public boolean accept(File dir, String name){
+				
+				return name.endsWith(ext);
+			}
+		});
+		
+		File file = new File(path+"\\"+title+".txt");
+
+		if(file.exists())
+			return true;
+		else
+			return false;
 	}
 
 }
