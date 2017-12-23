@@ -23,7 +23,7 @@ public class SimpleProgram {
 		}
 		
 		Boolean isExistMemo(String title){
-			File path = new File("C:\\Users\\ggg\\workspace\\swe1");
+			File path = new File(".");
 			final String ext = ".txt";
 			
 			String fileList[] = path.list(new FilenameFilter(){
